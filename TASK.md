@@ -1,8 +1,8 @@
-[] creare la migration per la tabella technologies
-[] creare il model Technology
-[] creare la migration per la tabella pivot project_technology
-[] aggiungere ai model Technology e Project i metodi per definire la relazione many to many
-[] visualizzare nella pagina di dettaglio di un progetto le tecnologie utilizzate, se presenti
+[x] creare la migration per la tabella technologies
+[x] creare il model Technology
+[x] creare la migration per la tabella pivot project_technology
+[x] aggiungere ai model Technology e Project i metodi per definire la relazione many to many
+[x] visualizzare nella pagina di dettaglio di un progetto le tecnologie utilizzate, se presenti
 
 []Bonus 1:
 creare il seeder per il model Technology.

@@ -17,6 +17,17 @@
                     <strong>Category: </strong>
                     {{ $project->category ? $project->category->title : 'Categoria non definita' }}
                 </p>
+
+                <h5 class="text-white">Tecnologie Utilizzate:</h5>
+                @if ($project->technologies->isNotEmpty())
+                    <ul>
+                        @foreach ($project->technologies as $technology)
+                            <li>{{ $technology->name }}</li>
+                        @endforeach
+                    </ul>
+                @else
+                    <p class="text-white">Nessuna tecnologia utilizzata.</p>
+                @endif
                 <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-warning rounded-1">
                     <i class="fa-solid fa-pencil" style="color: #ffffff;"></i>
                 </a>
