@@ -10,21 +10,27 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = [
-        'url', 'image', 'title', 'description', 'languages', 'category_id', 'slug'
+        'url', 'image', 'title', 'description', 'category_id', 'slug'
     ];
 
-    public function getLanguagesArrayAttribute()
-    {
-        return explode(',', $this->languages);
-    }
 
-    public function setLanguagesArrayAttribute($value)
-    {
-        $this->attributes['languages'] = implode(',', $value);
-    }
 
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 }
+
+
+
+
+
+    // public function getLanguagesArrayAttribute()
+    // {
+    //     return explode(',', $this->languages);
+    // }
+
+    // public function setLanguagesArrayAttribute($value)
+    // {
+    //     $this->attributes['languages'] = implode(',', $value);
+    // }
