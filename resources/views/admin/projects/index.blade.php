@@ -25,7 +25,6 @@
                 {{-- <th class="text-uppercase">#</th> --}}
                 <th class="text-uppercase">Thumb</th>
                 <th class="text-uppercase">Title</th>
-                <th class="text-uppercase">Languages</th>
                 <th class="text-uppercase text-center">Actions</th>
             </tr>
         </thead>
@@ -48,15 +47,6 @@
                                 {{ $project->category ? $project->category->title : 'Categoria non definita' }}
                             </p>
                         </div>
-                    </td>
-                    <td>
-                       <ul>
-                            @foreach (explode(',',$project->languages) as $language )
-
-                                <li>{{ $language }}</li>
-
-                            @endforeach
-                       </ul>
                     </td>
                     <td class="text-center">
                         <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-info rounded-1">
