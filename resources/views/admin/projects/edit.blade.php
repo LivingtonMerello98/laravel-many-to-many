@@ -52,10 +52,6 @@
                     <label for="description" class="text-white">Description</label>
                     <textarea name="description" id="description" class="form-control " rows="7">{{ old('description', $project->description) }}</textarea>
                 </div>
-                <div class="form-group mb-3">
-                    <label for="languages" class="text-white">Languages</label>
-                    <input type="text" name="languages[]" id="languages" class="form-control" placeholder="linguaggi" value="{{ old('languages', $project->languages) }}" required>
-                </div>
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
