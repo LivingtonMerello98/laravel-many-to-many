@@ -22,7 +22,7 @@
                 @if ($project->technologies->isNotEmpty())
                     <ul>
                         @foreach ($project->technologies as $technology)
-                            <li>{{ $technology->name }}</li>
+                            <li class="text-white">{{ $technology->name }}</li>
                         @endforeach
                     </ul>
                 @else
