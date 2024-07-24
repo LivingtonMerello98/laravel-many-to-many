@@ -47,7 +47,6 @@
                         @endforeach
                     </select>
                 </div>
-
                 <div class="form-group mb-3">
                     <label for="description" class="text-white">Description</label>
                     <textarea name="description" id="description" class="form-control " rows="7">{{ old('description', $project->description) }}</textarea>

@@ -17,9 +17,6 @@
                     <strong>Category: </strong>
                     {{ $project->category ? $project->category->title : 'Categoria non definita' }}
                 </p>
-
-                <p class="text-white"><strong>Languages:</strong> {{ $project->languages }}</p>
-
                 <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-warning rounded-1">
                     <i class="fa-solid fa-pencil" style="color: #ffffff;"></i>
                 </a>
