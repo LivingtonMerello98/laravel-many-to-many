@@ -37,15 +37,11 @@ class ProjectController extends Controller
             'image' => 'required',
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'languages' => 'required|array',
             'category_id' => 'nullable|exists:categories,id',
         ]);
 
         // Genera automaticamente il campo 'slug' dal titolo
         $validated['slug'] = Str::slug($request->title);
-
-        $validated['languages'] = implode(',', $validated['languages']);
-
 
         Project::create($validated);
 
@@ -89,14 +85,11 @@ class ProjectController extends Controller
             'image' => 'required',
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'languages' => 'required|array',
             'category_id' => 'nullable|exists:categories,id',
         ]);
 
         // Genera automaticamente il campo 'slug' dal titolo
         $validated['slug'] = Str::slug($request->title);
-
-        $validated['languages'] = implode(',', $validated['languages']);
 
         // trova il progetto esistente e lo aggiorna
         $project = Project::findOrFail($id);

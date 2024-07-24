@@ -46,10 +46,6 @@
                         <label for="description" class="text-white">Description</label>
                         <textarea name="description" id="description" class="form-control" rows="8" placeholder="descrizione">{{ old('description') }}</textarea>
                     </div>
-                    <div class="form-group mb-3">
-                        <label for="languages" class="text-white">Languages</label>
-                        <input type="text" name="languages[]" id="languages" class="form-control" placeholder="linguaggi" value="{{ old('languages') }}">
-                    </div>
                 </div>
                 
                 <div class="col-md-12 d-flex justify-content-start">
