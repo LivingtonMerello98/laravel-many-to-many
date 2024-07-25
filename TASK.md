@@ -20,3 +20,19 @@ aggiungere le operazioni CRUD per il model Technology, in modo da gestire le tec
 [x] rimuovere dal Projects/create
 [x] rimuovere dal Projects/edit
 [x] rimuovere dal Projects/show
+
+
+#implementazione di cover
+
+[x]integrare cover nel model Project
+[x]integrare cover nel ProjectController
+
+    create() destroy()
+
+[] integrare cover nel index
+[] integrare cover nello show
+[] integrare cover nel edit
+
+[] integrare l update di cover
+
+    update() 
