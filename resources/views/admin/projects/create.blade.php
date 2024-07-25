@@ -23,10 +23,6 @@
                         <input type="text" class="form-control" id="url" name="url" placeholder="url del sito" value="{{ old('url') }}">
                     </div>
                     <div class="form-group mb-3">
-                        <label for="image" class="text-white">Thumb URL</label>
-                        <input type="text" name="image" id="thumb" class="form-control" placeholder="url dell'immagine" value="{{ old('image') }}">
-                    </div>
-                    <div class="form-group mb-3">
                         <label for="title" class="text-white">Title</label>
                         <input type="text" name="title" id="title" class="form-control" placeholder="nome del sito" value="{{ old('title') }}">
                     </div>
