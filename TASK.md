@@ -9,3 +9,13 @@ creare il seeder per il model Technology.
 
 []Bonus 2:
 aggiungere le operazioni CRUD per il model Technology, in modo da gestire le tecnologie utilizzate nei progetti direttamente dal pannello di amministrazione.
+
+#rimuovere image
+
+[] rimuovere colonna image con una migration
+[] rimuovere dal model Project
+[] rimuovere dal ProjectController
+[] rimuovere dal Projects/index
+[] rimuovere dal Projects/create
+[] rimuovere dal Projects/edit
+[] rimuovere dal Projects/show
