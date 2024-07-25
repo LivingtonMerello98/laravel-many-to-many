@@ -25,7 +25,7 @@
             {{ session('error') }}
         </div>
     @endif
-    
+
     <table class="table table-dark table-striped">
         <thead>
             <tr>
@@ -43,7 +43,11 @@
                     </td> --}}
                     <td>
                         <div>
-                            <img src="{{ $project->image }}" alt="{{ $project->title }}" class="w-100" style="max-width: 50px; min-width: 50px;">
+                            @if ($project->cover)
+                                <img src="{{asset('storage/'. $project->cover)}}" alt="" class="w-100" style="max-width: 50px; min-width: 50px;">
+                                @else
+                                <img src="{{ $project->image }}" alt="{{ $project->title }}" class="w-100" style="max-width: 50px; min-width: 50px;"> 
+                            @endif
                         </div>
                     </td>
                     <td>

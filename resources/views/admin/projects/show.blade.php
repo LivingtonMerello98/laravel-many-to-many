@@ -7,6 +7,13 @@
                 <div style="width: 70%; height:auto;">
                     <img src="{{ $project->image }}" alt="{{ $project->title }}" style="width: 100%; min-width: 50px;border-radius:0.5rem">
                 </div>
+
+                {{-- test --}}
+                @if ($project->cover)   
+                    <div style="width: 70%; height:auto;">
+                        <img src="{{asset('storage/'. $project->cover)}}" style="width: 100%;min-width: 50px;border-radius:0.5rem"" alt="">
+                    </div>
+                @endif
             </div>
             <div class="col-md-6">
                 <h3 class="text-white text-uppercase mb-3">{{ $project->title }}</h3>
@@ -31,6 +38,7 @@
                 <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-warning rounded-1">
                     <i class="fa-solid fa-pencil" style="color: #ffffff;"></i>
                 </a>
+
                 <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST" style="display:inline-block;">
                     @csrf
                     @method('DELETE')
