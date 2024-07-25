@@ -12,8 +12,8 @@ aggiungere le operazioni CRUD per il model Technology, in modo da gestire le tec
 
 #rimuovere image
 
-[] rimuovere colonna image con una migration
-[] rimuovere dal model Project
+[x] rimuovere colonna image con una migration
+[x] rimuovere dal model Project
 [] rimuovere dal ProjectController
 [] rimuovere dal Projects/index
 [] rimuovere dal Projects/create

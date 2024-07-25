@@ -10,8 +10,7 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = [
-        //rimuovere image
-        'url', 'image', 'title', 'description', 'category_id', 'slug', 'cover'
+        'url', 'title', 'description', 'category_id', 'slug', 'cover'
     ];
 
 
