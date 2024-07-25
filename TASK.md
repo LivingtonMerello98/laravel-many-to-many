@@ -4,7 +4,7 @@
 [x] aggiungere ai model Technology e Project i metodi per definire la relazione many to many
 [x] visualizzare nella pagina di dettaglio di un progetto le tecnologie utilizzate, se presenti
 
-[]Bonus 1:
+[x]Bonus 1:
 creare il seeder per il model Technology.
 
 []Bonus 2:

@@ -20,8 +20,19 @@ class TechnologySeeder extends Seeder
             ['name' => 'PHP'],
         ];
 
+
+        //sganciare le foreign key
+
+
+        //truncate dei dati presenti in colonna
+
+        //utilizzare un ciclo per scegliere quanti dati inserire all interno
+
         foreach ($technologies as $technology) {
             Technology::create($technology);
         }
+
+
+        //riagganciare le foreign key
     }
 }
