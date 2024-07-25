@@ -4,10 +4,6 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-md-5 d-flex justify-content-center align-items-center">
-                <div style="width: 70%; height:auto;">
-                    <img src="{{ $project->image }}" alt="{{ $project->title }}" style="width: 100%; min-width: 50px;border-radius:0.5rem">
-                </div>
-
                 {{-- test --}}
                 @if ($project->cover)   
                     <div style="width: 70%; height:auto;">

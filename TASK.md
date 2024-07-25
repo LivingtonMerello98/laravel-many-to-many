@@ -19,4 +19,4 @@ aggiungere le operazioni CRUD per il model Technology, in modo da gestire le tec
 [x] rimuovere dal Projects/index
 [x] rimuovere dal Projects/create
 [x] rimuovere dal Projects/edit
-[] rimuovere dal Projects/show
+[x] rimuovere dal Projects/show
