@@ -30,7 +30,7 @@
         <thead>
             <tr>
                 {{-- <th class="text-uppercase">#</th> --}}
-                <th class="text-uppercase">Thumb</th>
+                <th class="text-uppercase">Image</th>
                 <th class="text-uppercase">Title</th>
                 <th class="text-uppercase text-center">Actions</th>
             </tr>
