@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 //aprire ticket per le request
@@ -31,22 +32,28 @@ class ProjectController extends Controller
 
     public function store(Request $request)
     {
-        //validazione dati provvisoria
+        // Validazione dei dati
         $validated = $request->validate([
-            'url' => 'required',
+            'url' => 'nullable',
             'image' => 'required',
+            'cover' => 'nullable|image|max:2048', // max 2MB
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'category_id' => 'nullable|exists:categories,id',
         ]);
 
-        // Genera automaticamente il campo 'slug' dal titolo
         $validated['slug'] = Str::slug($request->title);
+
+        $img_path = Storage::put('uploads', $validated['cover']);
+
+        $validated['cover'] = $img_path;
+
 
         Project::create($validated);
 
-        return redirect()->route('admin.projects.index'); //da rivedere
+        return redirect()->route('admin.projects.index');
     }
+
 
 
 

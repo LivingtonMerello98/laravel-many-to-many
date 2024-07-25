@@ -10,7 +10,7 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = [
-        'url', 'image', 'title', 'description', 'category_id', 'slug'
+        'url', 'image', 'title', 'description', 'category_id', 'slug', 'cover'
     ];
 
 

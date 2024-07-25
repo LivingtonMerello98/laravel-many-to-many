@@ -44,7 +44,12 @@
                 <div class="col-md-6">
                     <div class="form-group mb-3">
                         <label for="description" class="text-white">Description</label>
-                        <textarea name="description" id="description" class="form-control" rows="8" placeholder="descrizione">{{ old('description') }}</textarea>
+                        <textarea name="description" id="description" class="form-control" rows="7" placeholder="descrizione">{{ old('description') }}</textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cover" class="form-label text-white">Cover image</label>
+                        <input class="form-control" type="file" id="cover" name="cover">
                     </div>
                 </div>
                 
