@@ -18,5 +18,5 @@ aggiungere le operazioni CRUD per il model Technology, in modo da gestire le tec
     store(), update() 
 [x] rimuovere dal Projects/index
 [x] rimuovere dal Projects/create
-[] rimuovere dal Projects/edit
+[x] rimuovere dal Projects/edit
 [] rimuovere dal Projects/show

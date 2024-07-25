@@ -16,9 +16,7 @@
             @endif
         </div>
         <div class="col-md-5 d-flex justify-content-center align-items-center">
-            <div style="width: 70%; height:auto;">
-                <img src="{{ old('image', $project->image) }}" alt="{{ old('title', $project->title) }}" style="width: 100%; min-width: 50px;border-radius:0.5rem">
-            </div>
+            
         </div>
         <div class="col-md-7">
             <h3 class="text-white text-uppercase">Edit Project</h3>
