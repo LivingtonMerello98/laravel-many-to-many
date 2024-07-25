@@ -35,7 +35,6 @@ class ProjectController extends Controller
         // Validazione dei dati
         $validated = $request->validate([
             'url' => 'nullable',
-            'image' => 'required',
             'cover' => 'nullable|image|max:2048', // max 2MB
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
@@ -89,7 +88,6 @@ class ProjectController extends Controller
         // Validazione dati provvisoria
         $validated = $request->validate([
             'url' => 'required',
-            'image' => 'required',
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'category_id' => 'nullable|exists:categories,id',
