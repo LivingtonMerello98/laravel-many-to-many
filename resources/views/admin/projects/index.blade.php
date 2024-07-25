@@ -45,8 +45,6 @@
                         <div>
                             @if ($project->cover)
                                 <img src="{{asset('storage/'. $project->cover)}}" alt="" class="w-100" style="max-width: 50px; min-width: 50px;">
-                                @else
-                                <img src="{{ $project->image }}" alt="{{ $project->title }}" class="w-100" style="max-width: 50px; min-width: 50px;"> 
                             @endif
                         </div>
                     </td>
