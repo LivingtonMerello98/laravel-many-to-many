@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+//i modelli category e technology sono all'interno dello stesso namespace 
+//possiao anche evitare di importarli 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

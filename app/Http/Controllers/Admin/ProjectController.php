@@ -27,6 +27,7 @@ class ProjectController extends Controller
 
     public function create()
     {
+        //filtriamo le catefories nella pagina create.blade per l'input select
         $categories = Category::all();
         return view('admin.projects.create', compact('categories'));
     }
@@ -60,6 +61,7 @@ class ProjectController extends Controller
     //dettaglio 
     public function show($id)
     {
+        //recupera l'id del progetto con la
         $project = Project::with('category')->find($id);
 
         if (!$project) {
