@@ -51,7 +51,7 @@ class TechnologyController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.technologies.edit');
     }
 
     /**
@@ -65,8 +65,12 @@ class TechnologyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Technology $technology)
     {
-        //
+
+        $technology_name = $technology->name;
+        $technology->delete();
+
+        return redirect()->route('admin.technologies.index')->with('success', $technology_name . '-Technology deleted');
     }
 }

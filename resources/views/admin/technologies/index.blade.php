@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 {{-- technologies index --}}
+
 @section('content')
     <div class="container">
         <div class="row">
@@ -26,7 +27,7 @@
                     <tr>
                         <th class="text-uppercase">#</th>
                         <th class="text-uppercase">Technology</th>
-                        <th class="text-uppercase">Actions</th>
+                        <th class="text-uppercase text-center">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,19 +47,19 @@
                                 <a href="{{ route('admin.technologies.show', $technology->id) }}" class="btn btn-info rounded-1">
                                     <i class="fa-regular fa-eye" style="color: #ffffff;"></i>
                                 </a>
-
-                                {{-- buttons
-                                <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-warning rounded-1">
+                                
+                                <a href="{{ route('admin.technologies.edit', $technology->id) }}" class="btn btn-warning rounded-1">
                                     <i class="fa-solid fa-pencil" style="color: #ffffff;"></i>
                                 </a>
-                                <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST" style="display:inline-block;">
+
+                                <form action="{{ route('admin.technologies.destroy', $technology->id) }}" method="POST" style="display:inline-block;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger rounded-1">
                                         <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
                                     </button>
                                 </form>
-                            </td> --}}
+                            </td> 
 
 
                         </tr>
