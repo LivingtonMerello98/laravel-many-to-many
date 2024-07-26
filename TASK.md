@@ -31,8 +31,8 @@ aggiungere le operazioni CRUD per il model Technology, in modo da gestire le tec
 
 [x] integrare cover nel index
 [x] integrare cover nello show
-[] integrare cover nel edit
 
-[] integrare l update di cover
+DA RISOLVERE
+[x] integrare l update di cover
 
     update() 

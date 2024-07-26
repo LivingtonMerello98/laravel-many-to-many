@@ -87,7 +87,9 @@
                 @foreach ($projects as $project)
                     <div class="col-md-4">
                         <div class=" custom-card mb-4">
-                            <img src="{{$project->image}}" class="card-img-top" alt="">
+                            @if ($project->cover)
+                            <img src="{{asset('storage/'. $project->cover)}}" alt="{{$project->title}}" class="card-img-top" >
+                        @endif
                             <div class="card-body">
                                 <h5 class="card-title">{{ $project->title }}</h5>
                             </div>
