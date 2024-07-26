@@ -37,6 +37,18 @@
                             @endforeach
                         </select>
                     </div>
+
+                    <div class="form-group mb-3 d-flex justify-content-around flex-wrap">
+                        @foreach ($technologies as $technology)
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="{{ $technology->id }}" id="flexCheckDefault{{$technology->id}}" name="technology_id[]">
+                                <label class="form-check-label text-white" for="flexCheckDefault{{$technology->id}}">
+                                    {{ $technology->name }}
+                                </label>
+                            </div>
+                        @endforeach
+                    </div>
+
                 </div>
 
                 <div class="col-md-6">

@@ -53,6 +53,17 @@
                     <input class="form-control" type="file" id="cover" name="cover">
                 </div>
 
+                <div class="form-group mb-3 d-flex justify-content-around flex-wrap">
+                    @foreach ($technologies as $technology)
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="{{ $technology->id }}" id="flexCheckDefault{{$technology->id}}" name="technology_id[]">
+                            <label class="form-check-label text-white" for="flexCheckDefault{{$technology->id}}">
+                                {{ $technology->name }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>

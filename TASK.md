@@ -36,3 +36,8 @@ DA RISOLVERE
 [x] integrare l update di cover
 
     update() 
+
+
+[x]permettere all’utente di associare le tecnologie nella pagina di creazione e modifica di un progetto
+[x]gestire il salvataggio dell’associazione progetto-tecnologie con opportune regole di validazione
+[x]eliminare opportunamente le relazioni alla cancellazione del progetto/technology

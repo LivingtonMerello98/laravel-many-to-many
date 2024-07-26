@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Project;
+use App\Models\Technology;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -27,13 +28,16 @@ class ProjectController extends Controller
 
     public function create()
     {
-        //filtriamo le catefories nella pagina create.blade per l'input select
+        //filtriamo le categories nella pagina create.blade per l'input select
         $categories = Category::all();
-        return view('admin.projects.create', compact('categories'));
+        $technologies = Technology::all();
+
+        return view('admin.projects.create', compact('categories', 'technologies'));
     }
 
     public function store(Request $request)
     {
+        //dd($request->technology_id);
         // Validazione dei dati
         $validated = $request->validate([
             'url' => 'nullable',
@@ -51,7 +55,12 @@ class ProjectController extends Controller
 
         $project_name = $request->title;
 
-        Project::create($validated);
+        $project = Project::create($validated);
+
+        // Associa le tecnologie al progetto
+        if ($request->has('technology_id')) {
+            $project->technologies()->attach($request->technology_id);
+        }
 
         return redirect()->route('admin.projects.index')->with('success', $project_name . '-Project created');
     }
@@ -76,10 +85,11 @@ class ProjectController extends Controller
     //modifiche
     public function edit($id)
     {
+        $technologies = Technology::all();
         $project = Project::findOrFail($id);
         $categories = Category::all();
 
-        return view('admin.projects.edit', compact('project', 'categories'));
+        return view('admin.projects.edit', compact('project', 'categories', 'technologies'));
     }
 
 
@@ -116,6 +126,11 @@ class ProjectController extends Controller
         $project_title = $project->title;
         $project->update($validated);
 
+        // Sincronizzare le tecnologie
+        if ($request->has('technology_id')) {
+            $project->technologies()->sync($request->technology_id);
+        }
+
         return redirect()->route('admin.projects.index')->with('success', $project_title . '-Project updated'); //da rivedere
     }
 
@@ -132,6 +147,6 @@ class ProjectController extends Controller
         $project_title = $project->title;
         $project->delete();
 
-        return redirect()->route('admin.projects.index')->with('succes', $project_title . '-Project delete');
+        return redirect()->route('admin.projects.index')->with('succes', $project_title . '-Project deletedd');
     }
 }
