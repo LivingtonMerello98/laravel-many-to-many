@@ -37,7 +37,7 @@ class ProjectController extends Controller
         // Validazione dei dati
         $validated = $request->validate([
             'url' => 'nullable',
-            'cover' => 'nullable|image|max:4048', // 
+            'cover' => 'nullable|image|max:4048', // da rivedere 
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'category_id' => 'nullable|exists:categories,id',
@@ -49,10 +49,11 @@ class ProjectController extends Controller
 
         $validated['cover'] = $img_path;
 
+        $project_name = $request->title;
 
         Project::create($validated);
 
-        return redirect()->route('admin.projects.index');
+        return redirect()->route('admin.projects.index')->with('success', $project_name . '-Project created');
     }
 
 
@@ -112,9 +113,10 @@ class ProjectController extends Controller
             $validated['cover'] = $img_path;
         }
 
+        $project_title = $project->title;
         $project->update($validated);
 
-        return redirect()->route('admin.projects.index')->with('success', 'Progetto aggiornato con successo'); //da rivedere
+        return redirect()->route('admin.projects.index')->with('success', $project_title . '-Project updated'); //da rivedere
     }
 
 

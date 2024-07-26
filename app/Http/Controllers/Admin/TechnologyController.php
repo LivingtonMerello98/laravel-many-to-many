@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Technology;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,15 @@ class TechnologyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required | max:30'
+        ]);
+
+        $technology_name = $request->name;
+
+        Technology::create($validated);
+
+        return redirect()->route('admin.technologies.index')->with('success', $technology_name . '-created');
     }
 
     /**
@@ -49,17 +58,26 @@ class TechnologyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        return view('admin.technologies.edit');
+        $technology = Technology::findOrFail($id);
+        return view('admin.technologies.edit', compact('technology'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required | max:30'
+        ]);
+
+        $technology = Technology::findOrFail($id);
+        $technology_name = $request->name;
+        $technology->update($validated);
+
+        return redirect()->route('admin.technologies.index')->with('success',  $technology_name . '-technology updated');
     }
 
     /**
